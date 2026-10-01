@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-950 text-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argentina: La Pasión, la Gloria y su Cultura</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        celeste: {
+                            300: '#90C3EC',
+                            400: '#75AADB',
+                            500: '#5499C7',
+                            600: '#2980B9'
+                        },
+                        gold: {
+                            400: '#F4D03F',
+                            500: '#F1C40F',
+                            600: '#D4AC0D'
+                        },
+                        night: '#0B1120'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        title: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .pitch-pattern {
+            background-color: #1b4332;
+            background-image: repeating-linear-gradient(
+                0deg,
+                #1b4332,
+                #1b4332 30px,
+                #2d6a4f 30px,
+                #2d6a4f 60px
+            );
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2980B9;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5499C7;
+        }
+        .tab-btn.active {
+            background-color: rgba(41, 128, 185, 0.25);
+            border-color: #75AADB;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col font-sans bg-slate-950 text-slate-100 overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('copas')">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-celeste-500 via-white to-gold-500 p-0.5 shadow-lg flex items-center justify-center">
+                        <div class="w-full h-full bg-slate-950 rounded-full flex items-center justify-center">
+                            <span class="text-xl">🏆</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="font-title text-xl sm:text-2xl font-bold bg-gradient-to-r from-celeste-300 via-white to-gold-400 bg-clip-text text-transparent">
+                            ARGENTINA
+                        </h1>
+                        <p class="text-xs text-slate-400 tracking-widest uppercase">Fútbol, Historia & Cultura</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Bar Desktop -->
+                <nav class="hidden xl:flex space-x-1">
+                    <button onclick="switchTab('copas')" id="nav-copas" class="tab-btn active px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-trophy text-gold-400"></i>
+                        <span>3 Copas</span>
+                    </button>
+                    <button onclick="switchTab('leyendas')" id="nav-leyendas" class="tab-btn px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-star text-celeste-400"></i>
+                        <span>Messi & Diego</span>
+                    </button>
+                    <button onclick="switchTab('partidos')" id="nav-partidos" class="tab-btn px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-futbol text-emerald-400"></i>
+                        <span>Partidos Épicos</span>
+                    </button>
+                    <button onclick="switchTab('finales-perdidas')" id="nav-finales-perdidas" class="tab-btn px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-heart-crack text-rose-400"></i>
+                        <span>Finales Perdidas</span>
+                    </button>
+                    <button onclick="switchTab('dts')" id="nav-dts" class="tab-btn px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-clipboard-user text-amber-400"></i>
+                        <span>Todos los DTs</span>
+                    </button>
+                    <button onclick="switchTab('historia-pais')" id="nav-historia-pais" class="tab-btn px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-landmark text-sky-400"></i>
+                        <span>Historia Nacional</span>
+                    </button>
+                    <button onclick="switchTab('alma-argentina')" id="nav-alma-argentina" class="tab-btn px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-heart text-rose-400"></i>
+                        <span>El Alma Argentina</span>
+                    </button>
+                    <button onclick="switchTab('gastronomia-astro')" id="nav-gastronomia-astro" class="tab-btn px-3 py-2 rounded-xl text-xs font-semibold transition border border-transparent hover:border-slate-700 flex items-center space-x-1.5">
+                        <i class="fa-solid fa-utensils text-orange-400"></i>
+                        <span>Gastronomía & Cielos</span>
+                    </button>
+                </nav>
+
+                <!-- Mobile menu toggle button -->
+                <div class="xl:hidden">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-slate-900 text-slate-300 hover:text-white focus:outline-none border border-slate-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden xl:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-1 text-sm">
+            <button onclick="switchTab('copas'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-trophy text-gold-400 w-6"></i>
+                <span>Las 3 Copas del Mundo</span>
+            </button>
+            <button onclick="switchTab('leyendas'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-star text-celeste-400 w-6"></i>
+                <span>Lionel Messi & Diego Maradona</span>
+            </button>
+            <button onclick="switchTab('partidos'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-futbol text-emerald-400 w-6"></i>
+                <span>Partidos Históricos e Inolvidables</span>
+            </button>
+            <button onclick="switchTab('finales-perdidas'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-heart-crack text-rose-400 w-6"></i>
+                <span>Finales Perdidas (1930, 1990, 2014)</span>
+            </button>
+            <button onclick="switchTab('dts'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-clipboard-user text-amber-400 w-6"></i>
+                <span>Directores Técnicos y Alineaciones</span>
+            </button>
+            <button onclick="switchTab('historia-pais'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-landmark text-sky-400 w-6"></i>
+                <span>Historia Nacional Argentina</span>
+            </button>
+            <button onclick="switchTab('alma-argentina'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-heart text-rose-400 w-6"></i>
+                <span>El Alma Argentina · Arte y Orgullo</span>
+            </button>
+            <button onclick="switchTab('gastronomia-astro'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg font-medium hover:bg-slate-800 flex items-center space-x-2">
+                <i class="fa-solid fa-utensils text-orange-400 w-6"></i>
+                <span>Gastronomía, Bebidas & Astronomía</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ==========================================
+             SECCIÓN 1: LAS 3 COPAS DEL MUNDO
+             ========================================== -->
+        <section id="section-copas" class="tab-content space-y-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-gold-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30">
+                    Trilogía de Gloria Mundial
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    Las 3 Estrellas Eternas
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Las finales ganadas de 1978, 1986 y 2022. Explora las tácticas interactivas, posiciones, goles y héroes de cada consagración.
+                </p>
+            </div>
+
+            <!-- Match Switcher Buttons -->
+            <div class="flex justify-center space-x-2 sm:space-x-4">
+                <button onclick="loadWonFinal('1978')" id="btn-final-1978" class="match-select-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold px-4 py-3 rounded-xl border border-slate-800 transition text-xs sm:text-base">
+                    <span>🏆 Argentina 1978</span>
+                </button>
+                <button onclick="loadWonFinal('1986')" id="btn-final-1986" class="match-select-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold px-4 py-3 rounded-xl border border-slate-800 transition text-xs sm:text-base">
+                    <span>🏆 México 1986</span>
+                </button>
+                <button onclick="loadWonFinal('2022')" id="btn-final-2022" class="match-select-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold px-4 py-3 rounded-xl border border-slate-800 transition text-xs sm:text-base">
+                    <span>🏆 Qatar 2022</span>
+                </button>
+            </div>
+
+            <!-- Pitch & Detail Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Tactical Pitch Display -->
+                <div class="lg:col-span-6 glass-panel p-6 rounded-3xl shadow-2xl relative">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-title text-lg font-bold text-celeste-300 flex items-center gap-2">
+                            <i class="fa-solid fa-futbol text-gold-400"></i> Pizarra Táctica de la Final
+                        </h3>
+                        <span id="pitch-formation-badge" class="bg-celeste-500/20 text-celeste-300 font-mono text-xs px-2.5 py-1 rounded-md border border-celeste-500/30">
+                            Esquema: 4-3-3
+                        </span>
+                    </div>
+
+                    <!-- Grass Pitch -->
+                    <div class="w-full aspect-[3/4] sm:aspect-[4/5] pitch-pattern rounded-2xl border-4 border-slate-800 shadow-inner relative overflow-hidden p-4" id="tactical-pitch">
+                        <!-- Pitch Markings -->
+                        <div class="absolute inset-2 border-2 border-white/30 rounded-lg pointer-events-none"></div>
+                        <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-white/30 pointer-events-none"></div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 sm:w-36 h-28 sm:h-36 rounded-full border-2 border-white/30 pointer-events-none"></div>
+                        <div class="absolute top-2 left-1/2 -translate-x-1/2 w-40 h-16 border-2 border-white/30 border-t-0 pointer-events-none"></div>
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-40 h-16 border-2 border-white/30 border-b-0 pointer-events-none"></div>
+
+                        <!-- Player Markers Container -->
+                        <div id="players-container" class="relative w-full h-full z-10"></div>
+                    </div>
+                    <p class="text-xs text-center text-slate-400 mt-3">
+                        <i class="fa-solid fa-hand-pointer"></i> Haz clic en cualquier jugador para ver su rol en la final.
+                    </p>
+                </div>
+
+                <!-- Match Details & Context Card -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div id="won-final-info-card" class="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-xl space-y-6">
+                        <!-- Dynamic details injected here -->
+                    </div>
+
+                    <!-- Player detail card -->
+                    <div id="selected-player-info" class="glass-panel p-6 rounded-2xl border border-gold-500/30 bg-gold-500/5 hidden">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-900 border-2 border-gold-400 flex items-center justify-center font-bold text-xl text-gold-400" id="player-card-num">
+                                10
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white" id="player-card-name">Lionel Messi</h4>
+                                <p class="text-xs text-celeste-300 font-semibold uppercase tracking-wider" id="player-card-pos">Delantero / Capitán</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed" id="player-card-desc">
+                            Líder absoluto de la consagración.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 2: LIONEL MESSI Y DIEGO MARADONA
+             ========================================== -->
+        <section id="section-leyendas" class="tab-content space-y-8 hidden">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-celeste-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-celeste-500/10 border border-celeste-500/30">
+                    Eternos D10S
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    Messi & Maradona
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Las dos máximas deidades del fútbol mundial nacieron en suelo argentino. Comparativa de impacto, trofeos y legados imperecederos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Diego Maradona Card -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-celeste-500/30 relative overflow-hidden group hover:border-celeste-400 transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-400">El Pibe de Oro</span>
+                            <h3 class="text-3xl font-title font-black text-white">Diego Armando Maradona</h3>
+                        </div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-celeste-400 p-0.5 shadow-lg">
+                            <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center font-title font-black text-2xl text-gold-400">
+                                D10S
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        El mito viviente que conmovió al planeta en México 1986. Autor del "Gol del Siglo" y la "Mano de Dios" ante Inglaterra. Símbolo del potrero, la rebeldía popular y el amor visceral por la camiseta.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-3 text-center mb-6">
+                        <div class="bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+                            <span class="text-2xl font-black text-gold-400">1</span>
+                            <p class="text-[11px] text-slate-400 uppercase font-semibold">Mundial (1986)</p>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+                            <span class="text-2xl font-black text-celeste-300">91</span>
+                            <p class="text-[11px] text-slate-400 uppercase font-semibold">Partidos AFA</p>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+                            <span class="text-2xl font-black text-white">34</span>
+                            <p class="text-[11px] text-slate-400 uppercase font-semibold">Goles AFA</p>
+                        </div>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-celeste-300 mb-3 uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-star text-gold-400"></i> Hitos Inmortales
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                            <span><strong>El Gol del Siglo (1986):</strong> Dejó en el camino a 5 jugadores ingleses arrancando desde su propio campo.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                            <span><strong>Liderazgo Místico:</strong> Llevó a la Selección a dos finales del mundo consecutivas (1986 y 1990).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Lionel Messi Card -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-gold-500/30 relative overflow-hidden group hover:border-gold-400 transition-all">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-celeste-400">El Rey del Fútbol</span>
+                            <h3 class="text-3xl font-title font-black text-white">Lionel Andrés Messi</h3>
+                        </div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-amber-600 p-0.5 shadow-lg">
+                            <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center font-title font-black text-2xl text-gold-400">
+                                GOAT
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        El genio contemporáneo que pulverizó todos los récords del fútbol mundial. Coronó su gloriosa trayectoria levantando la Copa del Mundo en Qatar 2022 con un rendimiento deslumbrante.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-3 text-center mb-6">
+                        <div class="bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+                            <span class="text-2xl font-black text-gold-400">1</span>
+                            <p class="text-[11px] text-slate-400 uppercase font-semibold">Mundial (2022)</p>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+                            <span class="text-2xl font-black text-celeste-300">180+</span>
+                            <p class="text-[11px] text-slate-400 uppercase font-semibold">Partidos AFA</p>
+                        </div>
+                        <div class="bg-slate-900/80 p-3 rounded-2xl border border-slate-800">
+                            <span class="text-2xl font-black text-white">100+</span>
+                            <p class="text-[11px] text-slate-400 uppercase font-semibold">Goles AFA</p>
+                        </div>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-gold-400 mb-3 uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-star text-gold-400"></i> Hitos Inmortales
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                            <span><strong>Qatar 2022 Maravilloso:</strong> Marcó en Octavos, Cuartos, Semifinal y Doblete en la Gran Final.</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                            <span><strong>Ciclo Ganador Completo:</strong> Copa América 2021, Finalissima 2022, Mundial 2022 y Copa América 2024.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 3: PARTIDOS HISTÓRICOS ÉPICOS
+             ========================================== -->
+        <section id="section-partidos" class="tab-content space-y-8 hidden">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-emerald-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                    Batallas Legendarias
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    Partidos Históricos e Inolvidables
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Encuentros dramáticos, cruces clásicos y noches inolvidables que marcaron el fuego sagrado de la Selección Argentina.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="historic-matches-grid">
+                <!-- Match Card 1 -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-gold-500/40 transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold font-mono text-gold-400 bg-gold-500/10 px-2.5 py-1 rounded-full border border-gold-500/20">
+                            Cuartos - México 1986
+                        </span>
+                        <span class="text-xs text-slate-400 font-bold">2 - 1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Argentina vs Inglaterra</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        El partido más icónico de la historia de los Mundiales. Diego Maradona convirtió "La Mano de Dios" y 4 minutos después concretó el "Gol del Siglo", gambeteando a media Inglaterra desde su propio campo.
+                    </p>
+                    <div class="text-[11px] text-slate-400 border-t border-slate-800/80 pt-3 flex justify-between">
+                        <span><i class="fa-solid fa-location-dot text-celeste-400"></i> Estadio Azteca</span>
+                        <span class="text-gold-400 font-bold">DT: Bilardo</span>
+                    </div>
+                </div>
+
+                <!-- Match Card 2 -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-celeste-500/40 transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold font-mono text-celeste-300 bg-celeste-500/10 px-2.5 py-1 rounded-full border border-celeste-500/20">
+                            Octavos - Italia 1990
+                        </span>
+                        <span class="text-xs text-slate-400 font-bold">1 - 0</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Argentina vs Brasil</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        Brasil dominó y estrelló pelotas en los palos, pero en el minuto 81 Maradona frotó la lámpara arrastrando a 4 marcadores y habilitó a Claudio Paul Caniggia, quien eludió a Taffarel para un triunfo mítico.
+                    </p>
+                    <div class="text-[11px] text-slate-400 border-t border-slate-800/80 pt-3 flex justify-between">
+                        <span><i class="fa-solid fa-location-dot text-celeste-400"></i> Delle Alpi, Turín</span>
+                        <span class="text-celeste-300 font-bold">DT: Bilardo</span>
+                    </div>
+                </div>
+
+                <!-- Match Card 3 -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold font-mono text-emerald-300 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                            Final - Copa América 2021
+                        </span>
+                        <span class="text-xs text-slate-400 font-bold">1 - 0</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Argentina vs Brasil</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        El quiebre de 28 años sin títulos mayores. Con gol de vaselina de Ángel Di María tras un pase sublime de De Paul, Argentina dio el "Maracanazo" en Río de Janeiro liderada por Messi.
+                    </p>
+                    <div class="text-[11px] text-slate-400 border-t border-slate-800/80 pt-3 flex justify-between">
+                        <span><i class="fa-solid fa-location-dot text-emerald-400"></i> Est. Maracaná</span>
+                        <span class="text-emerald-300 font-bold">DT: Scaloni</span>
+                    </div>
+                </div>
+
+                <!-- Match Card 4 -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-amber-500/40 transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold font-mono text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
+                            Cuartos - Qatar 2022
+                        </span>
+                        <span class="text-xs text-slate-400 font-bold">2 - 2 (4-3 Pen.)</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Argentina vs Países Bajos</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        Aquel cruce picante bautizado como "La Batalla de Lusail". Asistencia genial de Messi a Molina, gol de penal de Messi ("¿Qué mirás, bobo?") y definición por penales con atajadas clave de Dibu Martínez.
+                    </p>
+                    <div class="text-[11px] text-slate-400 border-t border-slate-800/80 pt-3 flex justify-between">
+                        <span><i class="fa-solid fa-location-dot text-amber-400"></i> Est. Lusail</span>
+                        <span class="text-amber-300 font-bold">DT: Scaloni</span>
+                    </div>
+                </div>
+
+                <!-- Match Card 5 -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-purple-500/40 transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold font-mono text-purple-300 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-500/20">
+                            Semifinal - Italia 1990
+                        </span>
+                        <span class="text-xs text-slate-400 font-bold">1 - 1 (4-3 Pen.)</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Argentina vs Italia</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        Jugado en Nápoles, la casa de Maradona. Cabezazo inolvidable de Caniggia para empatar al anfitrión invicto, y show de Sergio Goycochea en los penales para silenciar a toda Italia.
+                    </p>
+                    <div class="text-[11px] text-slate-400 border-t border-slate-800/80 pt-3 flex justify-between">
+                        <span><i class="fa-solid fa-location-dot text-purple-400"></i> San Paolo, Nápoles</span>
+                        <span class="text-purple-300 font-bold">DT: Bilardo</span>
+                    </div>
+                </div>
+
+                <!-- Match Card 6 -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-rose-500/40 transition">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-xs font-bold font-mono text-rose-300 bg-rose-500/10 px-2.5 py-1 rounded-full border border-rose-500/20">
+                            Semifinal - Brasil 2014
+                        </span>
+                        <span class="text-xs text-slate-400 font-bold">0 - 0 (4-2 Pen.)</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Argentina vs Holanda</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        Una batalla táctica inolvidable con la célebre frase de Mascherano a Romero ("Hoy te convertís en héroe"). Atajadas descomunales de Chiquito Romero para colocar a Argentina en la Final.
+                    </p>
+                    <div class="text-[11px] text-slate-400 border-t border-slate-800/80 pt-3 flex justify-between">
+                        <span><i class="fa-solid fa-location-dot text-rose-400"></i> Arena Corinthians</span>
+                        <span class="text-rose-300 font-bold">DT: Sabella</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 4: FINALES PERDIDAS
+             ========================================== -->
+        <section id="section-finales-perdidas" class="tab-content space-y-8 hidden">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-rose-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30">
+                    Resiliencia Táctica
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    Las Finales Perdidas
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Las tres batallas de 1930, 1990 y 2014 donde Argentina rozó la gloria. Alineaciones y contexto táctico.
+                </p>
+            </div>
+
+            <!-- Lost final selection buttons -->
+            <div class="flex justify-center space-x-2 sm:space-x-4">
+                <button onclick="loadLostFinal('1930')" id="btn-lost-1930" class="lost-match-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold px-4 py-3 rounded-xl border border-slate-800 transition text-xs sm:text-base">
+                    <span>Uruguay 1930</span>
+                </button>
+                <button onclick="loadLostFinal('1990')" id="btn-lost-1990" class="lost-match-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold px-4 py-3 rounded-xl border border-slate-800 transition text-xs sm:text-base">
+                    <span>Italia 1990</span>
+                </button>
+                <button onclick="loadLostFinal('2014')" id="btn-lost-2014" class="lost-match-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold px-4 py-3 rounded-xl border border-slate-800 transition text-xs sm:text-base">
+                    <span>Brasil 2014</span>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-6 glass-panel p-6 rounded-3xl relative">
+                    <h3 class="font-title text-lg font-bold text-rose-300 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-rose-400"></i> Formación Táctica en el Campo
+                    </h3>
+                    <div class="w-full aspect-[3/4] sm:aspect-[4/5] pitch-pattern rounded-2xl border-4 border-slate-800 relative overflow-hidden p-4" id="lost-pitch">
+                        <div class="absolute inset-2 border-2 border-white/30 rounded-lg pointer-events-none"></div>
+                        <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-white/30 pointer-events-none"></div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-2 border-white/30 pointer-events-none"></div>
+                        <div id="lost-players-container" class="relative w-full h-full z-10"></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6" id="lost-final-info-card">
+                    <!-- Dynamic details for lost final injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 5: DIRECTORES TÉCNICOS Y ERAS
+             ========================================== -->
+        <section id="section-dts" class="tab-content space-y-8 hidden">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-amber-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">
+                    Estrategas del Banco de Suplentes
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    Directores Técnicos Históricos
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Listado y cronología de entrenadores de la Selección Argentina, sus esquemas preferidos y sus aportes tácticos.
+                </p>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" id="dt-search-input" onkeyup="filterDTs()" placeholder="Buscar DT por nombre o época (ej: Bilardo, Scaloni, Sabella...)" class="w-full pl-11 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-2xl text-slate-200 placeholder-slate-500 focus:outline-none focus:border-celeste-500 text-sm">
+                </div>
+            </div>
+
+            <!-- DT Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dt-cards-grid">
+                <!-- Injected dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 6: HISTORIA NACIONAL DE ARGENTINA
+             ========================================== -->
+        <section id="section-historia-pais" class="tab-content space-y-8 hidden">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-sky-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30">
+                    De la Revolución al Presente
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    Historia de la Nación Argentina
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Línea de tiempo con las grandes etapas históricas que moldearon la identidad, las instituciones y la sociedad argentina.
+                </p>
+            </div>
+
+            <div class="relative border-l-2 border-celeste-500/30 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-10 my-8">
+                <!-- Event 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-4 border-celeste-400 flex items-center justify-center"></div>
+                    <span class="text-xs font-mono font-bold text-celeste-300 bg-celeste-500/10 px-3 py-1 rounded-full border border-celeste-500/30">
+                        1810 - Revolución de Mayo
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2">El Primer Gobierno Patrio</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-1">
+                        El 25 de mayo de 1810 se destituyó al virrey español Cisneros y se conformó la Primera Junta en Buenos Aires, iniciando el camino irreversible hacia la emancipación sudamericana.
+                    </p>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-4 border-gold-400 flex items-center justify-center"></div>
+                    <span class="text-xs font-mono font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/30">
+                        1816 - Declaración de la Independencia
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2">Declaración en San Miguel de Tucumán</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-1">
+                        El 9 de julio de 1816, el Congreso de Tucumán proclamó la independencia formal de las Provincias Unidas del Río de la Plata de la corona española y de toda otra dominación extranjera.
+                    </p>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-4 border-emerald-400 flex items-center justify-center"></div>
+                    <span class="text-xs font-mono font-bold text-emerald-300 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/30">
+                        1853 - Constitución Nacional
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2">Organización Constitucional y Federalismo</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-1">
+                        Se sanciona la Constitución de 1853 en Santa Fe, estableciendo la república representativa y federal, sentando las bases del Estado moderno y abriendo paso a la inmigración masiva.
+                    </p>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-4 border-amber-400 flex items-center justify-center"></div>
+                    <span class="text-xs font-mono font-bold text-amber-300 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
+                        1880 - 1930 - Inmigración & Granero del Mundo
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2">Crecimiento Agroexportador e Inmigración</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-1">
+                        Millones de inmigrantes italianos y españoles transformaron la demografía y la cultura. Argentina se posicionó como una de las potencias agroexportadoras globales y florecieron el Tango y los clubes de fútbol.
+                    </p>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-950 border-4 border-purple-400 flex items-center justify-center"></div>
+                    <span class="text-xs font-mono font-bold text-purple-300 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/30">
+                        1983 - Retorno Definitivo de la Democracia
+                    </span>
+                    <h3 class="text-xl font-bold text-white mt-2">Democracia e Institucionalidad</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mt-1">
+                        Con las elecciones de 1983 y la asunción de Raúl Alfonsín, Argentina consolidó más de cuatro décadas ininterrumpidas de vigencia constitucional y respeto a los derechos humanos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 7: EL ALMA ARGENTINA
+             ========================================== -->
+        <section id="section-alma-argentina" class="tab-content space-y-8 hidden">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-rose-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30">
+                    Orgullo, Arte e Identidad
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    El Alma Argentina
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    La riqueza cultural que nos define: música, literatura, cine, ciencia y los símbolos que unen a toda la Nación.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+                <!-- Tango -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-rose-500/40 transition">
+                    <div class="text-4xl mb-3">💃</div>
+                    <h3 class="text-xl font-bold text-white mb-2">El Tango</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Patrimonio de la Humanidad. Nacido en los arrabales de Buenos Aires y Montevideo, conquistó el mundo. Gardel, Piazzolla y la milonga siguen latentes en cada esquina.
+                    </p>
+                </div>
+
+                <!-- Folklore -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-amber-500/40 transition">
+                    <div class="text-4xl mb-3">🎸</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Folklore Nacional</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Zamba, chacarera, malambo y vidala. Mercedes Sosa, Atahualpa Yupanqui y el sonido de la tierra profunda que une norte, centro y Patagonia.
+                    </p>
+                </div>
+
+                <!-- Literatura -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-celeste-500/40 transition">
+                    <div class="text-4xl mb-3">📚</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Literatura Universal</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Jorge Luis Borges, Julio Cortázar, Adolfo Bioy Casares, Roberto Arlt. Una de las literaturas más influyentes del siglo XX y del mundo de habla hispana.
+                    </p>
+                </div>
+
+                <!-- Cine y Teatro -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-purple-500/40 transition">
+                    <div class="text-4xl mb-3">🎬</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cine y Teatro</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Oscar a Mejor Película Extranjera, actores y directores de renombre mundial. El teatro independiente de Buenos Aires es uno de los más vibrantes del planeta.
+                    </p>
+                </div>
+
+                <!-- Ciencia -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="text-4xl mb-3">🔬</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Ciencia e Innovación</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        5 Premios Nobel (Medicina, Química y la Paz). Luis Federico Leloir, Bernardo Houssay, César Milstein. Tradición científica de excelencia mundial.
+                    </p>
+                </div>
+
+                <!-- Símbolos -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-gold-500/40 transition">
+                    <div class="text-4xl mb-3">🇦🇷</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Símbolos Patrios</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        La Bandera de Belgrano, el Escudo Nacional, el Himno de Vicente López y Planes, y la Escarapela. Emblemas que nos representan en cada rincón del mundo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl border border-celeste-500/20 text-center">
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    <i class="fa-solid fa-quote-left text-celeste-400 mr-2"></i>
+                    Argentina no es solo un país: es una emoción. Es el grito en la cancha, el mate compartido, la bandera al viento y la certeza de que, pase lo que pase, siempre volvemos a encontrarnos.
+                    <i class="fa-solid fa-quote-right text-celeste-400 ml-2"></i>
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 8: GASTRONOMÍA, BEBIDAS Y ASTRONOMÍA
+             ========================================== -->
+        <section id="section-gastronomia-astro" class="tab-content space-y-8 hidden">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-orange-400 text-xs sm:text-sm font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30">
+                    Sabores y Cielos
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-title font-extrabold mt-3 text-white">
+                    Gastronomía & Cielos Australes
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Del asado y el mate al Malbec mendocino, junto a los cielos más puros del planeta en San Juan y Patagonia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Asado -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-orange-500/40 transition">
+                    <div class="text-4xl mb-3">🥩</div>
+                    <h3 class="text-xl font-bold text-white mb-2">El Asado Tradicional</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        El ritual culinario y social por excelencia. Cortes emblemáticos como tira de asado, vacío y entraña cocinados a fuego lento a las brasas de leña.
+                    </p>
+                </div>
+
+                <!-- Mate -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-orange-500/40 transition">
+                    <div class="text-4xl mb-3">🧉</div>
+                    <h3 class="text-xl font-bold text-white mb-2">El Mate</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Infusión nacional preparada con yerba mate en recipiente de calabaza con bombilla. Símbolo de reunión, amistad y charla compartida.
+                    </p>
+                </div>
+
+                <!-- Vino Malbec -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-orange-500/40 transition">
+                    <div class="text-4xl mb-3">🍷</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Vino Malbec Mendocino</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Argentina es la cuna del mejor Malbec del mundo. Cultivado al pie de la Cordillera de los Andes con altitud ideal y notas aromáticas exquisitas.
+                    </p>
+                </div>
+
+                <!-- Fernet con Coca -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-orange-500/40 transition">
+                    <div class="text-4xl mb-3">🍹</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Fernet con Coca</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Aperitivo amargo de hierbas de origen italiano adaptado como icono popular cordobés y nacional, mezclado con abundante hielo y bebida cola.
+                    </p>
+                </div>
+
+                <!-- Observatorio El Leoncito -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-indigo-500/40 transition">
+                    <div class="text-4xl mb-3">🌌</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Observatorio El Leoncito</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Ubicado en San Juan a más de 2.500 msnm, cuenta con más de 300 noches despejadas al año para observar galaxias y la Vía Láctea sin contaminación lumínica.
+                    </p>
+                </div>
+
+                <!-- Cruz del Sur -->
+                <div class="glass-panel p-6 rounded-3xl border border-slate-800 hover:border-purple-500/40 transition">
+                    <div class="text-4xl mb-3">✨</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cielos Patagónicos & Cruz del Sur</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Desde los glaciares hasta la Puna, las noches australes ofrecen una panorámica inolvidable de la constelación de la Cruz del Sur y nebulosas lejanas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="glass-panel border-t border-slate-800 mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-xs sm:text-sm space-y-2">
+            <p class="font-title text-slate-300 font-bold">
+                🇦🇷 ARGENTINA - CAMPEONA DEL MUNDO 1978, 1986, 2022 🌟🌟🌟
+            </p>
+            <p>
+                Plataforma interactiva sobre la historia, el fútbol y la riqueza cultural de Argentina.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // DATA STRUCTURE: WON FINALS
+        const WON_FINALS = {
+            '1978': {
+                year: '1978',
+                host: 'Argentina 1978',
+                opponent: 'Países Bajos',
+                score: '3 - 1 (T.E.)',
+                stadium: 'Estadio Monumental, Buenos Aires',
+                dt: 'César Luis Menotti',
+                formation: '4-3-3',
+                goals: 'Kempes (38\', 105\'), Bertoni (115\') / Nanninga (82\')',
+                summary: 'La primera estrella albiceleste. Ante un estadio repleto de papelitos, Argentina superó a Holanda en tiempo suplementario con actuación consagratoria de Mario Kempes.',
+                players: [
+                    { id: 1, name: "Ubaldo Fillol", pos: "POR", x: 50, y: 88, desc: "El 'Pato', brillante tapando balones clave en los 120 minutos." },
+                    { id: 2, name: "Jorge Olguín", pos: "DFR", x: 80, y: 72, desc: "Lateral derecho seguro y firme en los duelos individuales." },
+                    { id: 3, name: "Luis Galván", pos: "DFC", x: 62, y: 76, desc: "Zaguero central de tiempismo exquisito." },
+                    { id: 4, name: "Daniel Passarella", pos: "DFC / C", x: 38, y: 76, desc: "El Gran Capitán, fiero en la marca y líder espiritual." },
+                    { id: 5, name: "Alberto Tarantini", pos: "DFL", x: 20, y: 72, desc: "Lateral izquierdo de despliegue incansable." },
+                    { id: 6, name: "Osvaldo Ardiles", pos: "MC", x: 35, y: 52, desc: "Dinámica y manejo rápido de primera intención." },
+                    { id: 7, name: "Américo Gallego", pos: "MCD", x: 50, y: 58, desc: "El 'Tolo', el tapón en mitad de cancha recuperando todo." },
+                    { id: 8, name: "Mario Kempes", pos: "MO", x: 65, y: 48, desc: "El 'Matador', autor de dos goles en la final y goleador del torneo." },
+                    { id: 9, name: "Daniel Bertoni", pos: "ED", x: 80, y: 25, desc: "Autor del tercer gol definitivo que desató la fiesta nacional." },
+                    { id: 10, name: "Leopoldo Luque", pos: "DC", x: 50, y: 20, desc: "Centrodelantero guapo y pivoteador nato." },
+                    { id: 11, name: "Oscar Ortiz", pos: "EI", x: 20, y: 25, desc: "Extremo habilidoso desbordando por la izquierda." }
+                ]
+            },
+            '1986': {
+                year: '1986',
+                host: 'México 1986',
+                opponent: 'Alemania Federal',
+                score: '3 - 2',
+                stadium: 'Estadio Azteca, Ciudad de México',
+                dt: 'Carlos Salvador Bilardo',
+                formation: '3-5-2',
+                goals: 'Brown (23\'), Valdano (55\'), Burruchaga (84\') / Rummenigge (74\'), Völler (80\')',
+                summary: 'Cátedra táctica del Dr. Bilardo y el auge supremo de Diego Armando Maradona. Tras el empate alemán, Maradona metió una asistencia genial para la corrida gloriosa de Burruchaga.',
+                players: [
+                    { id: 1, name: "Nery Pumpido", pos: "POR", x: 50, y: 88, desc: "Guardameta titular indiscutido en la gesta azteca." },
+                    { id: 2, name: "José Cuciuffo", pos: "STO", x: 75, y: 72, desc: "Stopper derecho de marca asfixiante." },
+                    { id: 3, name: "José Luis Brown", pos: "LIB", x: 50, y: 78, desc: "El 'Tata', metió el primer gol y jugó lesionado del hombro." },
+                    { id: 4, name: "Oscar Ruggeri", pos: "STO", x: 25, y: 72, desc: "El 'Cabezón', pilar defensivo imbatible por alto." },
+                    { id: 5, name: "Ricardo Giusti", pos: "CJD", x: 85, y: 52, desc: "Carrilero derecho con ida y vuelta constante." },
+                    { id: 6, name: "Sergio Batista", pos: "MCD", x: 50, y: 60, desc: "El 'Checho', eje y equilibrio en mediocampo." },
+                    { id: 7, name: "Héctor Enrique", pos: "MC", x: 65, y: 48, desc: "El 'Negro', con entrega física encomiable." },
+                    { id: 8, name: "Jorge Burruchaga", pos: "MC / MP", x: 35, y: 48, desc: "Heroico autor del gol del triunfo inolvidable al 84'." },
+                    { id: 9, name: "Julio Olarticoechea", pos: "CJI", x: 15, y: 52, desc: "Carrilero por izquierda rindiendo a alto nivel." },
+                    { id: 10, name: "Diego Maradona", pos: "MP / C", x: 50, y: 32, desc: "D10S. Capitán, genio universal y cerebro del equipo." },
+                    { id: 11, name: "Jorge Valdano", pos: "DC", x: 50, y: 18, desc: "Anotó el segundo gol con definición cruzada magistral." }
+                ]
+            },
+            '2022': {
+                year: '2022',
+                host: 'Qatar 2022',
+                opponent: 'Francia',
+                score: '3 - 3 (4-2 Pen.)',
+                stadium: 'Estadio Lusail, Doha',
+                dt: 'Lionel Scaloni',
+                formation: '4-3-3',
+                goals: 'Messi (23\'P, 108\'), Di María (36\') / Mbappé (80\'P, 81\', 118\'P)',
+                summary: 'La final más emocionante de la historia del fútbol. Argentina dominó con una lección de fútbol, resistió los embates galos y se coronó en los penales tras la salvada eterna de Dibu Martínez.',
+                players: [
+                    { id: 1, name: "Emiliano Martínez", pos: "POR", x: 50, y: 88, desc: "El 'Dibu', héroe absoluto con su atajada a Kolo Muani en el 123' y los penales." },
+                    { id: 2, name: "Nahuel Molina", pos: "DFR", x: 80, y: 72, desc: "Lateral veloz conteniendo la banda derecha." },
+                    { id: 3, name: "Cristian Romero", pos: "DFC", x: 62, y: 76, desc: "El 'Cuti', central agresivo, rápido y de anticipación implacable." },
+                    { id: 4, name: "Nicolás Otamendi", pos: "DFC", x: 38, y: 76, desc: "Líder de la zaga, firme en todos los duelos aéreos." },
+                    { id: 5, name: "Nicolás Tagliafico", pos: "DFL", x: 20, y: 72, desc: "Marca férrea y sacrificio impecable por izquierda." },
+                    { id: 6, name: "Rodrigo De Paul", pos: "MC", x: 70, y: 52, desc: "El 'Motorcito', presión inagotable y entrega total." },
+                    { id: 7, name: "Enzo Fernández", pos: "MCD", x: 50, y: 58, desc: "Mejor Jugador Joven del Mundial. Distribución estelar." },
+                    { id: 8, name: "Alexis Mac Allister", pos: "MC", x: 30, y: 52, desc: "Visión táctica exquisita y asistencia perfecta a Di María." },
+                    { id: 9, name: "Lionel Messi", pos: "ED / C", x: 75, y: 28, desc: "El GOAT. Doblete en la final y MVP indiscutido del Mundial." },
+                    { id: 10, name: "Julián Álvarez", pos: "DC", x: 50, y: 20, desc: "La 'Araña', presión asfixiante y 4 goles vitales en el torneo." },
+                    { id: 11, name: "Ángel Di María", pos: "EI", x: 25, y: 28, desc: "El 'Fideo', autor de un golazo sublime y actuación descollante." }
+                ]
+            }
+        };
+
+        // DATA STRUCTURE: LOST FINALS
+        const LOST_FINALS = {
+            '1930': {
+                year: '1930',
+                host: 'Uruguay 1930',
+                opponent: 'Uruguay',
+                score: '2 - 4',
+                stadium: 'Estadio Centenario, Montevideo',
+                dt: 'Francisco Olazar / Juan José Tramutola',
+                summary: 'Primera final mundialista. Argentina se fue al descanso ganando 2-1 con tantos de Peucelle y Stábile, pero Uruguay logró remontar en la segunda mitad.',
+                players: [
+                    { name: "Juan Botasso", pos: "POR", x: 50, y: 88 },
+                    { name: "José Della Torre", pos: "DEF", x: 65, y: 74 },
+                    { name: "Fernando Paternoster", pos: "DEF", x: 35, y: 74 },
+                    { name: "Pedro Arico Suárez", pos: "MED", x: 80, y: 55 },
+                    { name: "Luis Monti", pos: "MED", x: 50, y: 58 },
+                    { name: "Juan Evaristo", pos: "MED", x: 20, y: 55 },
+                    { name: "Mario Evaristo", pos: "DEL", x: 15, y: 25 },
+                    { name: "Manuel Ferreira", pos: "DEL", x: 35, y: 28 },
+                    { name: "Guillermo Stábile", pos: "DEL", x: 50, y: 20 },
+                    { name: "Francisco Varallo", pos: "DEL", x: 65, y: 28 },
+                    { name: "Carlos Peucelle", pos: "DEL", x: 85, y: 25 }
+                ]
+            },
+            '1990': {
+                year: '1990',
+                host: 'Italia 1990',
+                opponent: 'Alemania Federal',
+                score: '0 - 1',
+                stadium: 'Estadio Olímpico, Roma',
+                dt: 'Carlos Salvador Bilardo',
+                summary: 'Una epopeya diezmada por suspensiones (Caniggia, Giusti) y un Maradona jugando lesionado. Alemania ganó con un polémico penal a 5 minutos del final.',
+                players: [
+                    { name: "Sergio Goycochea", pos: "POR", x: 50, y: 88 },
+                    { name: "Juan Simón", pos: "LIB", x: 50, y: 78 },
+                    { name: "Pedro Monzón", pos: "STO", x: 75, y: 70 },
+                    { name: "Oscar Ruggeri", pos: "STO", x: 25, y: 70 },
+                    { name: "Néstor Sensini", pos: "CAR", x: 85, y: 52 },
+                    { name: "José Serrizuela", pos: "MC", x: 62, y: 55 },
+                    { name: "Pedro Troglio", pos: "MC", x: 38, y: 55 },
+                    { name: "Néstor Lorenzo", pos: "CAR", x: 15, y: 52 },
+                    { name: "Jorge Burruchaga", pos: "MP", x: 35, y: 38 },
+                    { name: "Diego Maradona", pos: "MP", x: 65, y: 38 },
+                    { name: "Gustavo Dezotti", pos: "DC", x: 50, y: 20 }
+                ]
+            },
+            '2014': {
+                year: '2014',
+                host: 'Brasil 2014',
+                opponent: 'Alemania',
+                score: '0 - 1 (T.E.)',
+                stadium: 'Estadio Maracaná, Río de Janeiro',
+                dt: 'Alejandro Sabella',
+                summary: 'Gran planteo táctico de Sabella. Argentina tuvo las opciones más claras de gol pero no definió, y Götze convirtió en el tiempo suplementario.',
+                players: [
+                    { name: "Sergio Romero", pos: "POR", x: 50, y: 88 },
+                    { name: "Pablo Zabaleta", pos: "DFR", x: 80, y: 72 },
+                    { name: "Martín Demichelis", pos: "DFC", x: 62, y: 76 },
+                    { name: "Ezequiel Garay", pos: "DFC", x: 38, y: 76 },
+                    { name: "Marcos Rojo", pos: "DFL", x: 20, y: 72 },
+                    { name: "Ezequiel Lavezzi", pos: "ED", x: 80, y: 45 },
+                    { name: "Lucas Biglia", pos: "MC", x: 60, y: 58 },
+                    { name: "Javier Mascherano", pos: "MCD", x: 40, y: 58 },
+                    { name: "Enzo Pérez", pos: "EI", x: 20, y: 45 },
+                    { name: "Lionel Messi", pos: "MP", x: 50, y: 32 },
+                    { name: "Gonzalo Higuaín", pos: "DC", x: 50, y: 18 }
+                ]
+            }
+        };
+
+        // DATA STRUCTURE: ALL TECHNICAL DIRECTORS
+        const DT_LIST = [
+            { name: "Lionel Scaloni", period: "2018 - Presente", titles: "Mundial 2022, Copa América 2021 & 2024, Finalissima 2022", style: "Flexibilidad táctica, grupo unido, intensidad y posesión vertical", scheme: "4-3-3 / 4-4-2" },
+            { name: "Jorge Sampaoli", period: "2017 - 2018", titles: "Clasificación Rusia 2018", style: "Presión alta y vértigo ofensivo", scheme: "2-3-3-2 / 3-4-3" },
+            { name: "Gerardo Martino", period: "2014 - 2016", titles: "Subcampeón Copa América 2015 & 2016", style: "Ataque posicional y juego de elaboración", scheme: "4-3-3" },
+            { name: "Alejandro Sabella", period: "2011 - 2014", titles: "Subcampeón del Mundo Brasil 2014", style: "Solidez defensiva, orden y velocidad de réplica", scheme: "4-4-2 / 5-3-2" },
+            { name: "Sergio Batista", period: "2010 - 2011", titles: "Paso por Copa América 2011", style: "Posesión de pelota y pase corto", scheme: "4-3-3" },
+            { name: "Diego Maradona", period: "2008 - 2010", titles: "Cuartos en Sudáfrica 2010", style: "Motivación visceral e ímpetu ofensivo", scheme: "4-1-3-2" },
+            { name: "Alfio Basile", period: "1991-1994, 2006-2008", titles: "Copa América 1991 & 1993", style: "Fútbol de toque, elegancia y voz de mando", scheme: "4-3-1-2" },
+            { name: "José Pekerman", period: "2004 - 2006", titles: "Cuartos en Alemania 2006 / Tricampeón Sub-20", style: "Juego de toque posicional y formación integral", scheme: "4-3-1-2" },
+            { name: "Marcelo Bielsa", period: "1998 - 2004", titles: "Oro Olímpico Atenas 2004", style: "Mecanización, presión alta sofocante e intensidad", scheme: "3-3-1-3" },
+            { name: "Daniel Passarella", period: "1994 - 1998", titles: "Cuartos en Francia 1998", style: "Disciplina estricta y solidez física", scheme: "3-4-1-2" },
+            { name: "Carlos Salvador Bilardo", period: "1983 - 1990", titles: "Campeón Mundial 1986, Subcampeón 1990", style: "Táctica de laboratorio, análisis del rival y sistema con líbero", scheme: "3-5-2" },
+            { name: "César Luis Menotti", period: "1974 - 1982", titles: "Campeón Mundial 1978", style: "Fútbol ofensivo de toque, achique y vocación protagónica", scheme: "4-3-3" }
+        ];
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+            const content = document.getElementById(`section-${tabId}`);
+            const btn = document.getElementById(`nav-${tabId}`);
+
+            if (content) content.classList.remove('hidden');
+            if (btn) btn.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // LOAD WON FINALS INTO PITCH
+        function loadWonFinal(year) {
+            const match = WON_FINALS[year];
+            if (!match) return;
+
+            document.querySelectorAll('.match-select-btn').forEach(b => {
+                b.classList.remove('bg-gold-500', 'text-slate-950', 'border-gold-400');
+                b.classList.add('bg-slate-900', 'text-slate-300');
+            });
+            const activeBtn = document.getElementById(`btn-final-${year}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-900', 'text-slate-300');
+                activeBtn.classList.add('bg-gold-500', 'text-slate-950', 'border-gold-400');
+            }
+
+            document.getElementById('pitch-formation-badge').innerText = `Esquema: ${match.formation}`;
+
+            const container = document.getElementById('players-container');
+            container.innerHTML = '';
+
+            match.players.forEach(p => {
+                const node = document.createElement('div');
+                node.className = "absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group flex flex-col items-center";
+                node.style.left = `${p.x}%`;
+                node.style.top = `${p.y}%`;
+                node.onclick = () => showPlayerCard(p);
+
+                node.innerHTML = `
+                    <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-slate-950 border-2 border-celeste-400 text-white font-bold flex items-center justify-center text-xs shadow-lg group-hover:scale-125 group-hover:border-gold-400 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all">
+                        ${p.id}
+                    </div>
+                    <span class="mt-1 text-[10px] sm:text-xs bg-slate-950/90 text-slate-200 px-1.5 py-0.5 rounded border border-slate-700 whitespace-nowrap group-hover:border-gold-400 font-medium">
+                        ${p.name.split(' ').pop()}
+                    </span>
+                `;
+                container.appendChild(node);
+            });
+
+            const card = document.getElementById('won-final-info-card');
+            card.innerHTML = `
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div>
+                        <span class="text-xs font-bold text-gold-400 uppercase tracking-widest">${match.host}</span>
+                        <h3 class="text-2xl sm:text-3xl font-title font-extrabold text-white mt-1">
+                            Argentina vs ${match.opponent}
+                        </h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-2xl sm:text-3xl font-black text-gold-400">${match.score}</span>
+                        <p class="text-[11px] text-slate-400 uppercase font-semibold">Marcador Final</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 text-xs sm:text-sm">
+                    <div class="bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+                        <span class="text-slate-400 block text-[11px] uppercase font-bold">Director Técnico</span>
+                        <span class="text-white font-bold">${match.dt}</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+                        <span class="text-slate-400 block text-[11px] uppercase font-bold">Estadio / Sede</span>
+                        <span class="text-white font-bold">${match.stadium}</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-celeste-300 uppercase tracking-wider mb-1">Goles del Partido</h4>
+                    <p class="text-xs text-slate-300 font-mono bg-slate-900/80 p-3 rounded-xl border border-slate-800">${match.goals}</p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-gold-400 uppercase tracking-wider mb-1">Reseña Histórica</h4>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${match.summary}</p>
+                </div>
+            `;
+
+            document.getElementById('selected-player-info').classList.add('hidden');
+        }
+
+        function showPlayerCard(p) {
+            const card = document.getElementById('selected-player-info');
+            document.getElementById('player-card-num').innerText = p.id;
+            document.getElementById('player-card-name').innerText = p.name;
+            document.getElementById('player-card-pos').innerText = p.pos;
+            document.getElementById('player-card-desc').innerText = p.desc;
+            card.classList.remove('hidden');
+        }
+
+        // LOAD LOST FINALS INTO PITCH
+        function loadLostFinal(year) {
+            const match = LOST_FINALS[year];
+            if (!match) return;
+
+            document.querySelectorAll('.lost-match-btn').forEach(b => {
+                b.classList.remove('bg-rose-500', 'text-white', 'border-rose-400');
+                b.classList.add('bg-slate-900', 'text-slate-300');
+            });
+            const activeBtn = document.getElementById(`btn-lost-${year}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-900', 'text-slate-300');
+                activeBtn.classList.add('bg-rose-500', 'text-white', 'border-rose-400');
+            }
+
+            const container = document.getElementById('lost-players-container');
+            container.innerHTML = '';
+
+            match.players.forEach((p, idx) => {
+                const node = document.createElement('div');
+                node.className = "absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center";
+                node.style.left = `${p.x}%`;
+                node.style.top = `${p.y}%`;
+
+                node.innerHTML = `
+                    <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-slate-950 border-2 border-rose-400 text-rose-300 font-bold flex items-center justify-center text-[10px] sm:text-xs shadow-md">
+                        ${idx + 1}
+                    </div>
+                    <span class="mt-0.5 text-[9px] sm:text-[10px] bg-slate-950/90 text-slate-300 px-1 rounded border border-slate-800 whitespace-nowrap">
+                        ${p.name.split(' ').pop()}
+                    </span>
+                `;
+                container.appendChild(node);
+            });
+
+            const card = document.getElementById('lost-final-info-card');
+            card.innerHTML = `
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div>
+                        <span class="text-xs font-bold text-rose-400 uppercase tracking-widest">${match.host}</span>
+                        <h3 class="text-2xl font-title font-extrabold text-white mt-1">
+                            Argentina vs ${match.opponent}
+                        </h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-2xl font-black text-rose-400">${match.score}</span>
+                        <p class="text-[11px] text-slate-400 uppercase font-semibold">Marcador</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 text-xs">
+                    <div class="bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+                        <span class="text-slate-400 block text-[10px] uppercase font-bold">Director Técnico</span>
+                        <span class="text-white font-bold">${match.dt}</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+                        <span class="text-slate-400 block text-[10px] uppercase font-bold">Estadio</span>
+                        <span class="text-white font-bold">${match.stadium}</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-rose-300 uppercase tracking-wider mb-2">Contexto e Historia Táctica</h4>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${match.summary}</p>
+                </div>
+            `;
+        }
+
+        function renderDTs(list = DT_LIST) {
+            const grid = document.getElementById('dt-cards-grid');
+            grid.innerHTML = '';
+
+            list.forEach(dt => {
+                const card = document.createElement('div');
+                card.className = "glass-panel p-6 rounded-3xl border border-slate-800 hover:border-amber-500/40 transition flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
+                                ${dt.period}
+                            </span>
+                            <span class="text-xs text-slate-400 font-mono">
+                                ${dt.scheme}
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">${dt.name}</h3>
+                        <p class="text-xs text-celeste-300 font-semibold mb-4">${dt.titles}</p>
+                        
+                        <div class="space-y-2 text-xs text-slate-300 mb-4">
+                            <p><strong>Filosofía Táctica:</strong> ${dt.style}</p>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterDTs() {
+            const query = document.getElementById('dt-search-input').value.toLowerCase();
+            const filtered = DT_LIST.filter(dt => 
+                dt.name.toLowerCase().includes(query) || 
+                dt.period.toLowerCase().includes(query) ||
+                dt.titles.toLowerCase().includes(query)
+            );
+            renderDTs(filtered);
+        }
+
+        // Initialize view on load
+        window.onload = function() {
+            loadWonFinal('2022');
+            loadLostFinal('2014');
+            renderDTs();
+        };
+    </script>
+</body>
+</html>
